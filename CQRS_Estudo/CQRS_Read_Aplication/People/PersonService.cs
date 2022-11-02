@@ -27,7 +27,7 @@ namespace CQRS_Read_Aplication.People
 
         public IQueryable<Person> GetByName(string name)
         {
-            return _personRepository.Get(p => p.Nome.ToUpper().Contains(name.ToUpper());
+            return _personRepository.Get(p => p.Nome.ToUpper().Contains(name.ToUpper()));
         }
 
         public void Insert(Person entity)
