@@ -30,11 +30,8 @@ namespace CQRS_Read_Infrastructure.Persistence.People
 
         public void Insert(Person entity)
         {
-            if(entity.Id == -1)
-            {
-                entity = new Person(listaPersonMemory.Count + 1, entity.Class, entity.Nome, entity.Idade);
-                listaPersonMemory.Add(entity);
-            }
+            entity = new Person(entity.Id, entity.Class, entity.Nome, entity.Idade);
+            listaPersonMemory.Add(entity);
         }
 
         public void Update(Person entity)

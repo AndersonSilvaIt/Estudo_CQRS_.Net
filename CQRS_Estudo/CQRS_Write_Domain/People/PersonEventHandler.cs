@@ -1,5 +1,4 @@
 ﻿using CQRS_Read_Aplication.People;
-using CQRS_Read_Infrastructure.Persistence.People;
 using CQRS_Write_Domain.Events;
 
 namespace CQRS_Write_Domain.People
@@ -15,7 +14,8 @@ namespace CQRS_Write_Domain.People
 
         public void Handle(PersonCreateEvent @event)
         {
-            Person person = new Person(@event.AggregateId, (CQRS_Read_Infrastructure.Persistence.People.PersonClass)@event.Class, @event.Nome, @event.Idade);
+            CQRS_Read_Infrastructure.Persistence.People.Person person = 
+                        new CQRS_Read_Infrastructure.Persistence.People.Person(@event.AggregateId, (CQRS_Read_Infrastructure.Persistence.People.PersonClass)@event.Class, @event.Nome, @event.Idade);
 
             _personService.Insert(person);
         }

@@ -6,4 +6,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CQRS_Read_Infrastructure\CQRS_Read_Infrastructure.csproj" />
+    <ProjectReference Include="..\CQRS_Write_Application\CQRS_Write_Application.csproj" />
+    <ProjectReference Include="..\CQRS_Write_Infrastructure\CQRS_Write_Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
